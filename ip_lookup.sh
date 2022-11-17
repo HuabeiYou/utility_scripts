@@ -1,3 +1,3 @@
 #!/bin/sh
 
-curl ipinfo.ip/$1 | jq .
+curl ipinfo.io/$1 | jq .
