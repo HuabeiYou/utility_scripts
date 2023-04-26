@@ -1,7 +1,8 @@
 #!/bin/sh
 
 IP=$1
-TOKEN=$(sed "s/TOKEN_IPINFO=//g" $(dirname $0)/.env)
+ENV=$(dirname $0)/.env
+TOKEN=$(grep '^TOKEN_IPINFO=' $ENV | sed 's/^TOKEN_IPINFO=//')
 
 if [[ -z "$TOKEN" ]]; then
 	curl ipinfo.io/$IP | jq .
