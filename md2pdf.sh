@@ -37,11 +37,11 @@ process_args() {
 
 construct_cmd() {
 	# if [ "$lang" = "cn" ] || [ "$lang" = "chinese" ]; then
-	# 	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel --highlight-style zenburn -V CJKmainfont=\'Noto Sans CJK SC\' $input -o $output"
+	# 	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel -V CJKmainfont=\'Noto Sans CJK SC\' $input -o $output"
 	# else
 	# 	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel $input -o $output"
 	# fi
-	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel --highlight-style zenburn -V CJKmainfont=\'Noto Sans CJK SC\' $input -o $output"
+	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel --highlight-style tango -V CJKmainfont=\"Hei\" $input -o $output"
 }
 
 if [ $# -eq 0 ]; then
