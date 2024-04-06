@@ -36,11 +36,12 @@ process_args() {
 }
 
 construct_cmd() {
-	if [ "$lang" = "cn" ] || [ "$lang" = "chinese" ]; then
-		cmd="pandoc --from markdown --pdf-engine xelatex --listings -V geometry:margin=1in -V CJKmainfont=STSong -o $output $input"
-	else
-		cmd="pandoc --from markdown --pdf-engine xelatex --listings -V geometry:margin=1in -o $output $input"
-	fi
+	# if [ "$lang" = "cn" ] || [ "$lang" = "chinese" ]; then
+	# 	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel --highlight-style zenburn -V CJKmainfont=\'Noto Sans CJK SC\' $input -o $output"
+	# else
+	# 	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel $input -o $output"
+	# fi
+	cmd="pandoc --from markdown --pdf-engine xelatex --template eisvogel --highlight-style zenburn -V CJKmainfont=\'Noto Sans CJK SC\' $input -o $output"
 }
 
 if [ $# -eq 0 ]; then
